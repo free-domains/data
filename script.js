@@ -1,6 +1,6 @@
 const tableBody = document.getElementById("data-body");
 
-function loadRedirects() {
+function loadData() {
     fetch("https://raw.freesubdomains.org", {
         method: "GET"
     }).then(res => res.json()).then(data => {
@@ -54,4 +54,4 @@ function loadRedirects() {
     })
 }
 
-loadRedirects();
+loadData();
