@@ -43,8 +43,8 @@ function loadData() {
                 records.push(`<span class="text-blue-600 font-semibold">${record}</span> ${i.records[record]}`);
             })
 
-            c1.innerHTML = `<a href="https://${i.subdomain}.${i.domain}" class="font-semibold">${i.subdomain}.${i.domain}</a>`;
-            c2.innerHTML = i.owner.email;
+            c1.innerHTML = `<a href="https://${i.subdomain}.${i.domain}" class="text-blue-500 hover:text-blue-600 font-semibold">${i.subdomain}.${i.domain}</a>`;
+            c2.innerHTML = `<a href="mailto:${i.owner.email.replace(" (at) ", "@")}" class="underline underline-2 hover:no-underline">${i.owner.email.replace(" (at) ", "@")}</a>`;
             c3.innerHTML = records.join("<br>");
             c4.innerHTML = `<i class="${i.proxied ? "fa-solid fa-check text-green-600" : "fa-solid fa-x text-red-600"}"></i>`;
         })
