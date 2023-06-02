@@ -35,8 +35,16 @@ function loadData() {
                     return;
                 }
 
+                if(record === "MX") {
+                    i.records[record].forEach(r => {
+                        records.push(`<span class="text-blue-600 font-semibold">${record}</span> <span class="text-green-600 font-semibold">${r.priority}</span> ${r.value}`);
+                    })
+
+                    return;
+                }
+
                 if(record === "TXT") {
-                    i.records["TXT"].forEach(r => {
+                    i.records[record].forEach(r => {
                         records.push(`<span class="text-blue-600 font-semibold">${record}</span> <span class="text-green-600 font-semibold">${r.name}</span> ${r.value}`);
                     })
 
