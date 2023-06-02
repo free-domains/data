@@ -23,35 +23,29 @@ function loadData() {
 
             Object.keys(i.records).forEach(record => {
                 if(record === "A" || record === "AAAA") {
-                    i.records[record].forEach(r => {
+                    return i.records[record].forEach(r => {
                         records.push(`<span class="text-blue-600 font-semibold">${record}</span> ${r}`);
                     })
-
-                    return;
                 }
 
                 if(record === "MX") {
-                    i.records[record].forEach(r => {
+                    return i.records[record].forEach(r => {
                         records.push(`<span class="text-blue-600 font-semibold">${record}</span> <span class="text-green-600 font-semibold">${r.priority}</span> ${r.value}`);
                     })
-
-                    return;
                 }
 
                 if(record === "TXT") {
-                    i.records[record].forEach(r => {
+                    return i.records[record].forEach(r => {
                         records.push(`<span class="text-blue-600 font-semibold">${record}</span> <span class="text-green-600 font-semibold">${r.name}</span> ${r.value}`);
                     })
-
-                    return;
                 }
 
                 records.push(`<span class="text-blue-600 font-semibold">${record}</span> ${i.records[record]}`);
             })
 
-            c1.innerHTML = `<a href="https://${i.subdomain}.${i.domain}" class="text-blue-600 hover:text-blue-700 font-semibold">${i.subdomain}.${i.domain}</a>`;
-            c2.innerHTML = `<a href="mailto:${i.owner.email.replace(" (at) ", "@")}" class="underline underline-2 hover:no-underline">${i.owner.email.replace(" (at) ", "@")}</a>`;
-            c3.innerHTML = `${records.join("<br>")}`;
+            c1.innerHTML = `<a href="https://${i.subdomain}.${i.domain}" class="font-semibold">${i.subdomain}.${i.domain}</a>`;
+            c2.innerHTML = i.owner.email;
+            c3.innerHTML = records.join("<br>");
             c4.innerHTML = `<i class="${i.proxied ? "fa-solid fa-check text-green-600" : "fa-solid fa-x text-red-600"}"></i>`;
         })
     })
