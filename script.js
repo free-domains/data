@@ -19,11 +19,6 @@ function loadData() {
             c3.classList = "px-4 py-2 outline outline-1 outline-gray-700";
             c4.classList = "px-4 py-2 outline outline-1 outline-gray-700 text-center";
 
-            const icon = {
-                false: "fa-solid fa-x text-red-600",
-                true: "fa-solid fa-check text-green-600"
-            }
-
             const records = [];
 
             Object.keys(i.records).forEach(record => {
@@ -57,7 +52,7 @@ function loadData() {
             c1.innerHTML = `<a href="https://${i.subdomain}.${i.domain}" class="text-blue-600 hover:text-blue-700 font-semibold">${i.subdomain}.${i.domain}</a>`;
             c2.innerHTML = `<a href="mailto:${i.owner.email.replace(" (at) ", "@")}" class="underline underline-2 hover:no-underline">${i.owner.email.replace(" (at) ", "@")}</a>`;
             c3.innerHTML = `${records.join("<br>")}`;
-            c4.innerHTML = `<i class="${icon[i.proxied]}"></i>`;
+            c4.innerHTML = `<i class="${i.proxied ? "fa-solid fa-check text-green-600" : "fa-solid fa-x text-red-600"}"></i>`;
         })
     })
 }
