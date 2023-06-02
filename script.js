@@ -30,7 +30,7 @@ function loadData() {
 
                 if(record === "MX") {
                     return i.records[record].forEach(r => {
-                        records.push(`<span class="text-blue-600 font-semibold">${record}</span> <span class="text-green-600 font-semibold">${r.priority}</span> ${r.value}`);
+                        records.push(`<span class="text-blue-600 font-semibold">${record}</span> <span class="text-green-600 font-semibold">${r.priority}</span> ${r.value.toLowerCase()}`);
                     })
                 }
 
@@ -40,7 +40,7 @@ function loadData() {
                     })
                 }
 
-                records.push(`<span class="text-blue-600 font-semibold">${record}</span> ${i.records[record]}`);
+                records.push(`<span class="text-blue-600 font-semibold">${record}</span> ${i.records[record].toLowerCase()}`);
             })
 
             c1.innerHTML = `<a href="https://${i.subdomain}.${i.domain}" class="text-blue-500 hover:text-blue-600 font-semibold">${i.subdomain}.${i.domain}</a>`;
