@@ -1,7 +1,7 @@
 const tableBody = document.getElementById("data-body");
 
 function loadData() {
-    fetch("https://raw.freesubdomains.org", {
+    fetch("https://free-domains.github.io/raw", {
         method: "GET"
     }).then(res => res.json()).then(data => {
         data.sort((a, b) => `${a.subdomain}.${a.domain}`.localeCompare(`${b.subdomain}.${b.domain}`));
